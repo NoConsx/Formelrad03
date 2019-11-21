@@ -1,5 +1,8 @@
 package application;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 /**
  * Berechnet das Formelrad
  * @author Peter Rutschmann
@@ -47,6 +50,33 @@ public class Calculator {
 		/* Hier auf Grund der vorhanden Werte entscheiden
 		 * welche Methode unten aufgerufen werden muss.
 		 */
+		
+		int inputCounter = 0;
+		
+		if(leistung != 0.0) {
+			inputCounter++;
+		}
+		if(spannung != 0.0) {
+			inputCounter++;
+		}
+		if(strom != 0.0) {
+			inputCounter++;
+		}
+		if(widerstand != 0.0) {
+			inputCounter++;
+		}
+		
+		if(inputCounter > 2) {
+			System.out.println("Error: Do not add more than 2 inputs");
+			System.out.println("Inputs added : " + inputCounter);
+			
+	        Alert alert = new Alert(AlertType.ERROR);
+	        alert.setTitle("Input Error");
+	        alert.setHeaderText("ERROR: TO MANY INPUTS (" + inputCounter + ")");
+	        alert.setContentText("Please make sure you only add two inputs");
+	 
+	        alert.showAndWait();
+		}
 		
 		if(getLeistung() == 0 && getSpannung() != 0 && getStrom() != 0) {
 			leistung = pAusUundI(spannung, strom);
