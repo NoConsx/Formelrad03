@@ -78,65 +78,58 @@ public class Calculator {
 			alert.showAndWait();
 		}
 
+		if (getSpannung() == 0 && getWiderstand() != 0 && getStrom() != 0) {
+			spannung = uAusRundI(widerstand, strom);
+			System.out.println("Rechnung: Spannung: " + getSpannung() + " = Widerstand: " + getWiderstand() + " * "
+					+ "Stromstärke:  " + getStrom());
+		}
+
+		if (getSpannung() == 0 && getLeistung() != 0 && getStrom() != 0) {
+			spannung = uAusPundI(leistung, strom);
+			System.out.println("Rechnung: Spannung: " + getSpannung() + " = Leistung: " + getLeistung() + " / "
+					+ "Stromstärke: " + getStrom());
+		}
+
+		if (getSpannung() == 0 && getLeistung() != 0 && getWiderstand() != 0) {
+			spannung = uAusPundR(leistung, widerstand);
+			System.out.println("Rechnung: Spannung: " + getSpannung() + " =  Wurzel( Leistung: " + getLeistung() + " * "
+					+ "Widerstand: " + getWiderstand() + " )");
+		}
+
 		if (getLeistung() == 0 && getSpannung() != 0 && getStrom() != 0) {
-
-			if (getLeistung() == 0 && getSpannung() != 0 && getStrom() != 0) {
-				leistung = pAusUundI(spannung, strom);
-			}
-
-			if (getLeistung() == 0 && getWiderstand() != 0 && getStrom() != 0) {
-				leistung = pAusRundI(widerstand, strom);
-			}
-
-			if (getLeistung() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
-				leistung = pAusUundR(spannung, widerstand);
-			}
-			if (spannung == 0 && widerstand != 0 && strom != 0) {
-				spannung = uAusRundI(widerstand, strom);
-			}
-			if (spannung == 0 && leistung != 0 && strom != 0) {
-				spannung = uAusPundI(leistung, strom);
-			}
-			if (spannung == 0 && leistung != 0 && widerstand != 0) {
-				spannung = uAusPundR(leistung, widerstand);
-			}
-			
-	        Alert alert = new Alert(AlertType.ERROR);
-	        alert.setTitle("Input Error");
-	        alert.setHeaderText("ERROR: TO MANY INPUTS (" + inputCounter + ")");
-	        alert.setContentText("Please make sure you only add two inputs");
-	 
-	        alert.showAndWait();
-		}
-		
-		if(getLeistung() == 0 && getSpannung() != 0 && getStrom() != 0) {
 			leistung = pAusUundI(spannung, strom);
-			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Spannung: " + getSpannung() + " * " + "Stromstärke :" + getStrom() );
+			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Spannung: " + getSpannung() + " * "
+					+ "Stromstärke: " + getStrom());
 		}
-		
-		if(getLeistung() == 0 && getWiderstand() != 0 && getStrom() != 0) {
+
+		if (getLeistung() == 0 && getWiderstand() != 0 && getStrom() != 0) {
 			leistung = pAusRundI(widerstand, strom);
-			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Widerstand: " + getWiderstand() + " * " + "Stromstärke :" + getStrom() );
+			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Widerstand: " + getWiderstand() + " * "
+					+ "Stromstärke: " + getStrom());
 		}
-		
-		if(getLeistung() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
+
+		if (getLeistung() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
 			leistung = pAusUundR(spannung, widerstand);
-			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Spannung: " + getSpannung() + " * " + "Widerstand :" + getWiderstand() );
+			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Spannung: " + getSpannung() + " * "
+					+ "Widerstand: " + getWiderstand());
 		}
-		
-		if(getStrom() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
+
+		if (getStrom() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
 			strom = iAusPundR(widerstand, spannung);
-			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Wurzel( Spannung: " + getSpannung() + " / " + "Widerstand :" + getWiderstand() + " )" );
+			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Wurzel( Spannung: " + getSpannung() + " / "
+					+ "Widerstand: " + getWiderstand() + " )");
 		}
-		
-		if(getStrom() == 0 && getLeistung() != 0 && getSpannung() != 0) {
+
+		if (getStrom() == 0 && getLeistung() != 0 && getSpannung() != 0) {
 			strom = iAusPundU(leistung, spannung);
-			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Leistung: " + getLeistung() + " / " + "Spannung :" + getSpannung() );
+			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Leistung: " + getLeistung() + " / "
+					+ "Spannung: " + getSpannung());
 		}
-		
-		if(getStrom() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
+
+		if (getStrom() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
 			strom = iAusUundR(spannung, widerstand);
-			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Spannung: " + getSpannung() + " / " + "Widerstand :" + getWiderstand() );
+			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Spannung: " + getSpannung() + " / "
+					+ "Widerstand: " + getWiderstand());
 		}
 	}
 
@@ -167,17 +160,17 @@ public class Calculator {
 	public double uAusPundR(double p, double r) {
 		return Math.sqrt(p * r);
 	}
-	
+
 	public double iAusPundR(double p, double r) {
-		 return Math.sqrt(p/r);
-		}
-	
+		return Math.sqrt(p / r);
+	}
+
 	public double iAusPundU(double p, double u) {
-		 return p/u;
-		}
-	
+		return p / u;
+	}
+
 	public double iAusUundR(double u, double r) {
-		 return u/r;
-		}
+		return u / r;
+	}
 
 }
