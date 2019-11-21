@@ -92,6 +92,21 @@ public class Calculator {
 			leistung = pAusUundR(spannung, widerstand);
 			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Spannung: " + getSpannung() + " * " + "Widerstand :" + getWiderstand() );
 		}
+		
+		if(getStrom() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
+			strom = iAusPundR(widerstand, spannung);
+			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Wurzel( Spannung: " + getSpannung() + " / " + "Widerstand :" + getWiderstand() + " )" );
+		}
+		
+		if(getStrom() == 0 && getLeistung() != 0 && getSpannung() != 0) {
+			strom = iAusPundU(leistung, spannung);
+			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Leistung: " + getLeistung() + " / " + "Spannung :" + getSpannung() );
+		}
+		
+		if(getStrom() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
+			strom = iAusUundR(spannung, widerstand);
+			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Spannung: " + getSpannung() + " / " + "Widerstand :" + getWiderstand() );
+		}
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
@@ -107,6 +122,19 @@ public class Calculator {
 	
 	public double pAusUundR(double u, double r) {
 		 return (u*u)/r;
+		}
+	
+	
+	public double iAusPundR(double p, double r) {
+		 return Math.sqrt(p/r);
+		}
+	
+	public double iAusPundU(double p, double u) {
+		 return p/u;
+		}
+	
+	public double iAusUundR(double u, double r) {
+		 return u/r;
 		}
 
 }
