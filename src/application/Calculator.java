@@ -80,14 +80,17 @@ public class Calculator {
 		
 		if(getLeistung() == 0 && getSpannung() != 0 && getStrom() != 0) {
 			leistung = pAusUundI(spannung, strom);
+			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Spannung: " + getSpannung() + " * " + "Stromstärke :" + getStrom() );
 		}
 		
 		if(getLeistung() == 0 && getWiderstand() != 0 && getStrom() != 0) {
 			leistung = pAusRundI(widerstand, strom);
+			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Widerstand: " + getWiderstand() + " * " + "Stromstärke :" + getStrom() );
 		}
 		
 		if(getLeistung() == 0 && getSpannung() != 0 && getWiderstand() != 0) {
 			leistung = pAusUundR(spannung, widerstand);
+			System.out.println("Rechnung: Leistung: " + getLeistung() + " = Spannung: " + getSpannung() + " * " + "Widerstand :" + getWiderstand() );
 		}
 	}
 	
