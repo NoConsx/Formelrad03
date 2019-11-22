@@ -115,6 +115,19 @@ public class Main extends Application {
 				txStrom.setText(Double.toString(myCalculator.getStrom()));
 				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 			});
+			
+			Button btnClear = new Button();
+			btnClear.relocate(220, 445);
+			btnClear.setText("     Clear     ");
+			root.getChildren().add(btnClear);
+			
+			btnClear.setOnAction(e -> {
+
+				txLeistung.setText("");
+				txSpannung.setText("");
+				txStrom.setText("");
+				txWiderstand.setText("");
+			});
 
 			Scene scene = new Scene(root, 330, 490);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
