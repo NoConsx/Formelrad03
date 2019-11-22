@@ -131,6 +131,23 @@ public class Calculator {
 			System.out.println("Rechnung: Stromstärke: " + getStrom() + " = Spannung: " + getSpannung() + " / "
 					+ "Widerstand: " + getWiderstand());
 		}
+		if (getWiderstand() == 0 && getLeistung() != 0 && getSpannung() != 0) {
+			widerstand = rAusPundU(leistung, spannung);
+			System.out.println("Rechnung: Widerstand: " + getWiderstand() + " = (Spannung: " + getSpannung() + " * "
+					+ "Spannung: " + getSpannung() + ") / Leistung:" + getLeistung());
+		}
+
+		if (getWiderstand() == 0 && getLeistung() != 0 && getStrom() != 0) {
+			widerstand = rAusPundI(leistung, strom);
+			System.out.println("Rechnung: Widerstand: " + getWiderstand() + " = Leistung: " + getLeistung() + " / "
+					+ "(Strom: " + getStrom() + " * " + "Strom: " + getStrom());
+		}
+
+		if (getWiderstand() == 0 && getSpannung() != 0 && getStrom() != 0) {
+			widerstand = rAusUundI(spannung, strom);
+			System.out.println("Rechnung: Widerstand: " + getWiderstand() + " = Spannung: " + getSpannung() + " / "
+					+ "Stromstärke: " + getStrom());
+		}
 	}
 
 	/*
@@ -171,6 +188,18 @@ public class Calculator {
 
 	public double iAusUundR(double u, double r) {
 		return u / r;
+	}
+	
+	public double rAusPundU(double p, double u) {
+		return (u*u)/p;
+	}
+
+	public double rAusPundI(double p, double i) {
+		return p / (i*i);
+	}
+
+	public double rAusUundI(double u, double i) {
+		return u / i;
 	}
 
 }
