@@ -139,7 +139,6 @@ public class Main extends Application {
 			btnBerechnen.setText(" Berechnen ");
 			root.getChildren().addAll(btnBerechnen);
 
-
 			btnBerechnen.setOnAction(e -> {
 				btnBerechnen.isDefaultButton();
 				double power = 0.0;
@@ -147,43 +146,54 @@ public class Main extends Application {
 				double current = 0.0;
 				double resistence = 0.0;
 
-				if (txLeistung.getText().isEmpty() == false) {
-					power = Double.parseDouble(txLeistung.getText());
-				}
+				if (txLeistung.getText().isEmpty() == true & txSpannung.getText().isEmpty() == true
+						& txStrom.getText().isEmpty() == true & txWiderstand.getText().isEmpty() == true) {
 
-				else {
-					txLeistung.setStyle("-fx-text-inner-color: red;");
-				}
-				if (txSpannung.getText().isEmpty() == false) {
-					tension = Double.parseDouble(txSpannung.getText());
-				}
+					Alert alert = new Alert(AlertType.WARNING);
+					alert.setTitle("Input Error");
+					alert.setHeaderText("ERROR: No Input");
+					alert.setContentText("Please make sure you fill out 2 fields");
+					alert.showAndWait();
+				} else {
 
-				else {
-					txSpannung.setStyle("-fx-text-inner-color: red;");
-				}
-				if (txStrom.getText().isEmpty() == false) {
-					current = Double.parseDouble(txStrom.getText());
-				}
+					if (txLeistung.getText().isEmpty() == false) {
+						power = Double.parseDouble(txLeistung.getText());
+					}
 
-				else {
-					txStrom.setStyle("-fx-text-inner-color: red;");
+					else {
+						txLeistung.setStyle("-fx-text-inner-color: red;");
+					}
+					if (txSpannung.getText().isEmpty() == false) {
+						tension = Double.parseDouble(txSpannung.getText());
+					}
+
+					else {
+						txSpannung.setStyle("-fx-text-inner-color: red;");
+					}
+					if (txStrom.getText().isEmpty() == false) {
+						current = Double.parseDouble(txStrom.getText());
+					}
+
+					else {
+						txStrom.setStyle("-fx-text-inner-color: red;");
+					}
+
+					if (txWiderstand.getText().isEmpty() == false) {
+						resistence = Double.parseDouble(txWiderstand.getText());
+					}
+
+					else {
+						txWiderstand.setStyle("-fx-text-inner-color: red;");
+					}
+
+					Calculator myCalculator = new Calculator(power, tension, current, resistence);
+
+					myCalculator.calculate();
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+					txStrom.setText(Double.toString(myCalculator.getStrom()));
+					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 				}
-
-				if (txWiderstand.getText().isEmpty() == false) {
-					resistence = Double.parseDouble(txWiderstand.getText());
-				}
-
-				else {
-					txWiderstand.setStyle("-fx-text-inner-color: red;");
-				}
-
-				Calculator myCalculator = new Calculator(power, tension, current, resistence);
-
-				myCalculator.calculate();
-				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 			});
 
 			txLeistung.setOnKeyPressed(event -> {
@@ -194,46 +204,56 @@ public class Main extends Application {
 					double current = 0.0;
 					double resistence = 0.0;
 
-					if (txLeistung.getText().isEmpty() == false) {
-						power = Double.parseDouble(txLeistung.getText());
-					}
+					if (txLeistung.getText().isEmpty() == true & txSpannung.getText().isEmpty() == true
+							& txStrom.getText().isEmpty() == true & txWiderstand.getText().isEmpty() == true) {
 
-					else {
-						txLeistung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txSpannung.getText().isEmpty() == false) {
-						tension = Double.parseDouble(txSpannung.getText());
-					}
+						Alert alert = new Alert(AlertType.WARNING);
+						alert.setTitle("Input Error");
+						alert.setHeaderText("ERROR: No Input");
+						alert.setContentText("Please make sure you fill out 2 fields");
+						alert.showAndWait();
+					} else {
+						if (txLeistung.getText().isEmpty() == false) {
+							power = Double.parseDouble(txLeistung.getText());
+						}
 
-					else {
-						txSpannung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txStrom.getText().isEmpty() == false) {
-						current = Double.parseDouble(txStrom.getText());
-					}
+						else {
+							txLeistung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txSpannung.getText().isEmpty() == false) {
+							tension = Double.parseDouble(txSpannung.getText());
+						}
 
-					else {
-						txStrom.setStyle("-fx-text-inner-color: red;");
+						else {
+							txSpannung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txStrom.getText().isEmpty() == false) {
+							current = Double.parseDouble(txStrom.getText());
+						}
+
+						else {
+							txStrom.setStyle("-fx-text-inner-color: red;");
+						}
+
+						if (txWiderstand.getText().isEmpty() == false) {
+							resistence = Double.parseDouble(txWiderstand.getText());
+						}
+
+						else {
+							txWiderstand.setStyle("-fx-text-inner-color: red;");
+						}
+
+						Calculator myCalculator = new Calculator(power, tension, current, resistence);
+
+						myCalculator.calculate();
+						txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+						txStrom.setText(Double.toString(myCalculator.getStrom()));
+						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 					}
-
-					if (txWiderstand.getText().isEmpty() == false) {
-						resistence = Double.parseDouble(txWiderstand.getText());
-					}
-
-					else {
-						txWiderstand.setStyle("-fx-text-inner-color: red;");
-					}
-
-					Calculator myCalculator = new Calculator(power, tension, current, resistence);
-
-					myCalculator.calculate();
-					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-					txStrom.setText(Double.toString(myCalculator.getStrom()));
-					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 				}
 			});
-			
+
 			txStrom.setOnKeyPressed(event -> {
 				switch (event.getCode()) {
 				case ENTER:
@@ -242,46 +262,56 @@ public class Main extends Application {
 					double current = 0.0;
 					double resistence = 0.0;
 
-					if (txLeistung.getText().isEmpty() == false) {
-						power = Double.parseDouble(txLeistung.getText());
-					}
+					if (txLeistung.getText().isEmpty() == true & txSpannung.getText().isEmpty() == true
+							& txStrom.getText().isEmpty() == true & txWiderstand.getText().isEmpty() == true) {
 
-					else {
-						txLeistung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txSpannung.getText().isEmpty() == false) {
-						tension = Double.parseDouble(txSpannung.getText());
-					}
+						Alert alert = new Alert(AlertType.WARNING);
+						alert.setTitle("Input Error");
+						alert.setHeaderText("ERROR: No Input");
+						alert.setContentText("Please make sure you fill out 2 fields");
+						alert.showAndWait();
+					} else {
+						if (txLeistung.getText().isEmpty() == false) {
+							power = Double.parseDouble(txLeistung.getText());
+						}
 
-					else {
-						txSpannung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txStrom.getText().isEmpty() == false) {
-						current = Double.parseDouble(txStrom.getText());
-					}
+						else {
+							txLeistung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txSpannung.getText().isEmpty() == false) {
+							tension = Double.parseDouble(txSpannung.getText());
+						}
 
-					else {
-						txStrom.setStyle("-fx-text-inner-color: red;");
+						else {
+							txSpannung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txStrom.getText().isEmpty() == false) {
+							current = Double.parseDouble(txStrom.getText());
+						}
+
+						else {
+							txStrom.setStyle("-fx-text-inner-color: red;");
+						}
+
+						if (txWiderstand.getText().isEmpty() == false) {
+							resistence = Double.parseDouble(txWiderstand.getText());
+						}
+
+						else {
+							txWiderstand.setStyle("-fx-text-inner-color: red;");
+						}
+
+						Calculator myCalculator = new Calculator(power, tension, current, resistence);
+
+						myCalculator.calculate();
+						txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+						txStrom.setText(Double.toString(myCalculator.getStrom()));
+						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 					}
-
-					if (txWiderstand.getText().isEmpty() == false) {
-						resistence = Double.parseDouble(txWiderstand.getText());
-					}
-
-					else {
-						txWiderstand.setStyle("-fx-text-inner-color: red;");
-					}
-
-					Calculator myCalculator = new Calculator(power, tension, current, resistence);
-
-					myCalculator.calculate();
-					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-					txStrom.setText(Double.toString(myCalculator.getStrom()));
-					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 				}
 			});
-			
+
 			txSpannung.setOnKeyPressed(event -> {
 				switch (event.getCode()) {
 				case ENTER:
@@ -290,46 +320,56 @@ public class Main extends Application {
 					double current = 0.0;
 					double resistence = 0.0;
 
-					if (txLeistung.getText().isEmpty() == false) {
-						power = Double.parseDouble(txLeistung.getText());
-					}
+					if (txLeistung.getText().isEmpty() == true & txSpannung.getText().isEmpty() == true
+							& txStrom.getText().isEmpty() == true & txWiderstand.getText().isEmpty() == true) {
 
-					else {
-						txLeistung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txSpannung.getText().isEmpty() == false) {
-						tension = Double.parseDouble(txSpannung.getText());
-					}
+						Alert alert = new Alert(AlertType.WARNING);
+						alert.setTitle("Input Error");
+						alert.setHeaderText("ERROR: No Input");
+						alert.setContentText("Please make sure you fill out 2 fields");
+						alert.showAndWait();
+					} else {
+						if (txLeistung.getText().isEmpty() == false) {
+							power = Double.parseDouble(txLeistung.getText());
+						}
 
-					else {
-						txSpannung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txStrom.getText().isEmpty() == false) {
-						current = Double.parseDouble(txStrom.getText());
-					}
+						else {
+							txLeistung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txSpannung.getText().isEmpty() == false) {
+							tension = Double.parseDouble(txSpannung.getText());
+						}
 
-					else {
-						txStrom.setStyle("-fx-text-inner-color: red;");
+						else {
+							txSpannung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txStrom.getText().isEmpty() == false) {
+							current = Double.parseDouble(txStrom.getText());
+						}
+
+						else {
+							txStrom.setStyle("-fx-text-inner-color: red;");
+						}
+
+						if (txWiderstand.getText().isEmpty() == false) {
+							resistence = Double.parseDouble(txWiderstand.getText());
+						}
+
+						else {
+							txWiderstand.setStyle("-fx-text-inner-color: red;");
+						}
+
+						Calculator myCalculator = new Calculator(power, tension, current, resistence);
+
+						myCalculator.calculate();
+						txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+						txStrom.setText(Double.toString(myCalculator.getStrom()));
+						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 					}
-
-					if (txWiderstand.getText().isEmpty() == false) {
-						resistence = Double.parseDouble(txWiderstand.getText());
-					}
-
-					else {
-						txWiderstand.setStyle("-fx-text-inner-color: red;");
-					}
-
-					Calculator myCalculator = new Calculator(power, tension, current, resistence);
-
-					myCalculator.calculate();
-					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-					txStrom.setText(Double.toString(myCalculator.getStrom()));
-					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 				}
 			});
-			
+
 			txWiderstand.setOnKeyPressed(event -> {
 				switch (event.getCode()) {
 				case ENTER:
@@ -338,43 +378,53 @@ public class Main extends Application {
 					double current = 0.0;
 					double resistence = 0.0;
 
-					if (txLeistung.getText().isEmpty() == false) {
-						power = Double.parseDouble(txLeistung.getText());
-					}
+					if (txLeistung.getText().isEmpty() == true & txSpannung.getText().isEmpty() == true
+							& txStrom.getText().isEmpty() == true & txWiderstand.getText().isEmpty() == true) {
 
-					else {
-						txLeistung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txSpannung.getText().isEmpty() == false) {
-						tension = Double.parseDouble(txSpannung.getText());
-					}
+						Alert alert = new Alert(AlertType.WARNING);
+						alert.setTitle("Input Error");
+						alert.setHeaderText("ERROR: No Input");
+						alert.setContentText("Please make sure you fill out 2 fields");
+						alert.showAndWait();
+					} else {
+						if (txLeistung.getText().isEmpty() == false) {
+							power = Double.parseDouble(txLeistung.getText());
+						}
 
-					else {
-						txSpannung.setStyle("-fx-text-inner-color: red;");
-					}
-					if (txStrom.getText().isEmpty() == false) {
-						current = Double.parseDouble(txStrom.getText());
-					}
+						else {
+							txLeistung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txSpannung.getText().isEmpty() == false) {
+							tension = Double.parseDouble(txSpannung.getText());
+						}
 
-					else {
-						txStrom.setStyle("-fx-text-inner-color: red;");
+						else {
+							txSpannung.setStyle("-fx-text-inner-color: red;");
+						}
+						if (txStrom.getText().isEmpty() == false) {
+							current = Double.parseDouble(txStrom.getText());
+						}
+
+						else {
+							txStrom.setStyle("-fx-text-inner-color: red;");
+						}
+
+						if (txWiderstand.getText().isEmpty() == false) {
+							resistence = Double.parseDouble(txWiderstand.getText());
+						}
+
+						else {
+							txWiderstand.setStyle("-fx-text-inner-color: red;");
+						}
+
+						Calculator myCalculator = new Calculator(power, tension, current, resistence);
+
+						myCalculator.calculate();
+						txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+						txStrom.setText(Double.toString(myCalculator.getStrom()));
+						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 					}
-
-					if (txWiderstand.getText().isEmpty() == false) {
-						resistence = Double.parseDouble(txWiderstand.getText());
-					}
-
-					else {
-						txWiderstand.setStyle("-fx-text-inner-color: red;");
-					}
-
-					Calculator myCalculator = new Calculator(power, tension, current, resistence);
-
-					myCalculator.calculate();
-					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-					txStrom.setText(Double.toString(myCalculator.getStrom()));
-					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 				}
 			});
 			Button btnClear = new Button();
