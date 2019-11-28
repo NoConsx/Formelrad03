@@ -133,11 +133,31 @@ public class Main extends Application {
 			txWiderstand.relocate(100, 405);
 			txWiderstand.setFont(Font.font("Verdana", 15));
 			root.getChildren().add(txWiderstand);
-
+			
 			Button btnBerechnen = new Button();
 			btnBerechnen.relocate(220, 445);
 			btnBerechnen.setText(" Berechnen ");
 			root.getChildren().addAll(btnBerechnen);
+			
+			Label lblRechnungLeistung = new Label("");
+			lblRechnungLeistung.relocate(8, 475);
+			lblRechnungLeistung.setFont(Font.font(12));
+			root.getChildren().add(lblRechnungLeistung);
+
+			Label lblRechnungSpannung = new Label("");
+			lblRechnungSpannung.relocate(8, 490);
+			lblRechnungSpannung.setFont(Font.font(12));
+			root.getChildren().add(lblRechnungSpannung);
+			
+			Label lblRechnungStrom = new Label("");
+			lblRechnungStrom.relocate(8, 505);
+			lblRechnungStrom.setFont(Font.font(12));
+			root.getChildren().add(lblRechnungStrom);
+
+			Label lblRechnungWiderstand = new Label("");
+			lblRechnungWiderstand.relocate(8, 520);
+			lblRechnungWiderstand.setFont(Font.font(12));
+			root.getChildren().add(lblRechnungWiderstand);
 
 			btnBerechnen.setOnAction(e -> {
 				btnBerechnen.isDefaultButton();
@@ -188,11 +208,19 @@ public class Main extends Application {
 
 					Calculator myCalculator = new Calculator(power, tension, current, resistence);
 
+					
 					myCalculator.calculate();
 					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
 					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 					txStrom.setText(Double.toString(myCalculator.getStrom()));
-					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));				
+					
+					lblRechnungSpannung.setText(myCalculator.getRechnungSpannung());				
+					lblRechnungStrom.setText(myCalculator.getRechnungStrom());	
+					lblRechnungLeistung.setText(myCalculator.getRechnungLeistung());					
+					lblRechnungWiderstand.setText(myCalculator.getRechnungWiderstand());
+					
+				
 				}
 			});
 
@@ -250,6 +278,11 @@ public class Main extends Application {
 						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 						txStrom.setText(Double.toString(myCalculator.getStrom()));
 						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+						
+						lblRechnungSpannung.setText(myCalculator.getRechnungSpannung());				
+						lblRechnungStrom.setText(myCalculator.getRechnungStrom());	
+						lblRechnungLeistung.setText(myCalculator.getRechnungLeistung());					
+						lblRechnungWiderstand.setText(myCalculator.getRechnungWiderstand());
 					}
 				}
 			});
@@ -308,6 +341,11 @@ public class Main extends Application {
 						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 						txStrom.setText(Double.toString(myCalculator.getStrom()));
 						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+						
+						lblRechnungSpannung.setText(myCalculator.getRechnungSpannung());				
+						lblRechnungStrom.setText(myCalculator.getRechnungStrom());	
+						lblRechnungLeistung.setText(myCalculator.getRechnungLeistung());					
+						lblRechnungWiderstand.setText(myCalculator.getRechnungWiderstand());
 					}
 				}
 			});
@@ -366,6 +404,11 @@ public class Main extends Application {
 						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 						txStrom.setText(Double.toString(myCalculator.getStrom()));
 						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+						
+						lblRechnungSpannung.setText(myCalculator.getRechnungSpannung());				
+						lblRechnungStrom.setText(myCalculator.getRechnungStrom());	
+						lblRechnungLeistung.setText(myCalculator.getRechnungLeistung());					
+						lblRechnungWiderstand.setText(myCalculator.getRechnungWiderstand());
 					}
 				}
 			});
@@ -424,6 +467,11 @@ public class Main extends Application {
 						txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 						txStrom.setText(Double.toString(myCalculator.getStrom()));
 						txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+						
+						lblRechnungSpannung.setText(myCalculator.getRechnungSpannung());				
+						lblRechnungStrom.setText(myCalculator.getRechnungStrom());	
+						lblRechnungLeistung.setText(myCalculator.getRechnungLeistung());					
+						lblRechnungWiderstand.setText(myCalculator.getRechnungWiderstand());
 					}
 				}
 			});
@@ -444,7 +492,7 @@ public class Main extends Application {
 				txWiderstand.setStyle("-fx-text-inner-color: black;");
 			});
 
-			Scene scene = new Scene(root, 330, 490);
+			Scene scene = new Scene(root, 330, 550);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Formelrad");
