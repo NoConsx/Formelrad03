@@ -1,0 +1,187 @@
+*   commit 4b0369cec2615ac62e58d399770ab26532221b85 (HEAD -> master, origin/master, origin/HEAD)
+|\  Merge: c5d36fa 7c1796e
+| | Author: jgalli <joelgalli@gmx.ch>
+| | Date:   Fri Nov 22 03:08:27 2019 +0100
+| | 
+| |     Merge branch 'develop'
+| |   
+| *   commit 7c1796e2ed11e454fbe5b98ae287d3608ea9cbc5 (origin/develop, develop)
+| |\  Merge: a2fe5d2 1f216b1
+| | | Author: jgalli <joelgalli@gmx.ch>
+| | | Date:   Fri Nov 22 03:04:37 2019 +0100
+| | | 
+| | |     Merge remote-tracking branch 'origin/QuickFixStyles' into develop
+| | | 
+| | * commit 1f216b1f33ef6bf0e6ef8a004c6924aa06b17710 (origin/QuickFixStyles, QuickFixStyles)
+| |/  Author: jgalli <joelgalli@gmx.ch>
+| |   Date:   Fri Nov 22 03:03:44 2019 +0100
+| |   
+| |       Improve usability of Javafx styles
+| |   
+| *   commit a2fe5d20ab6337ee8702adda29b939a393714736
+| |\  Merge: beca552 946ef86
+| | | Author: jgalli <joelgalli@gmx.ch>
+| | | Date:   Fri Nov 22 01:31:52 2019 +0100
+| | | 
+| | |     Merge remote-tracking branch 'origin/ClearButton' into develop
+| | | 
+| | * commit 946ef867885e505d4f6e9ecb07cd0daa5bbf9eb5 (origin/ClearButton, ClearButton)
+| | | Author: jgalli <joelgalli@gmx.ch>
+| | | Date:   Fri Nov 22 01:30:37 2019 +0100
+| | | 
+| | |     Implement clear button
+| | |   
+| * |   commit beca5525ec1bcba24302d2b966a45b1a4fc5f837
+| |\ \  Merge: 0e28e6b bef1f0c
+| | |/  Author: Cyril <cyrildambach@gmail.com>
+| |/|   Date:   Fri Nov 22 01:27:05 2019 +0100
+| | |   
+| | |       Merge branch 'FeatureRedtextResult' into develop
+| | | 
+| | * commit bef1f0c413ae2f828fcb5c88d052d4090085dd2b (origin/FeatureRedtextResult)
+| |/  Author: Cyril <cyrildambach@gmail.com>
+| |   Date:   Fri Nov 22 01:24:41 2019 +0100
+| |   
+| |       Implemented Redtext Result Feature
+| |   
+| *   commit 0e28e6b1527f97bc922624d64f84f082b7e9529f
+| |\  Merge: 334927a ba1dc0d
+| | | Author: Cyril <cyrildambach@gmail.com>
+| | | Date:   Fri Nov 22 01:04:13 2019 +0100
+| | | 
+| | |     Merge branch 'FeatureResistanceFormulas' into develop
+| | | 
+| | * commit ba1dc0d103560d1b5bc98f9cd5a36d1aaacd340d (origin/FeatureResistanceFormulas)
+| |/  Author: Cyril <cyrildambach@gmail.com>
+| |   Date:   Fri Nov 22 01:00:49 2019 +0100
+| |   
+| |       Implements Resistance Formulas
+| |   
+| *   commit 334927aefc856be600c1844c42bce272c896e1ac
+| |\  Merge: 4d684ce 9109ece
+| | | Author: jgalli <joelgalli@gmx.ch>
+| | | Date:   Fri Nov 22 00:35:41 2019 +0100
+| | | 
+| | |     Merge remote-tracking branch 'origin/QuickFixMergeIssues' into develop
+| | | 
+| | * commit 9109ececd711f3e45c11818a5d81508ad8bb478d (origin/QuickFixMergeIssues, QuickFixMergeIssues)
+| |/  Author: jgalli <joelgalli@gmx.ch>
+| |   Date:   Fri Nov 22 00:34:54 2019 +0100
+| |   
+| |       Format and unify code
+| |   
+| *   commit 4d684ce57ff546a13d30d1c8eb1a7f178a12188a
+| |\  Merge: 310f257 e258b60
+| | | Author: Cyril <cyrildambach@gmail.com>
+| | | Date:   Fri Nov 22 00:18:51 2019 +0100
+| | | 
+| | |     Commit after fixing merge conflicts.
+| | |   
+| | *   commit e258b6033ff96c1393dd294b90f9993c05105a8b
+| | |\  Merge: 04ddae9 e62f13e
+| | | | Author: jgalli <joelgalli@gmx.ch>
+| | | | Date:   Fri Nov 22 00:05:43 2019 +0100
+| | | | 
+| | | |     Merge remote-tracking branch 'origin/FeatureCurrentFormula' into develop
+| | | | 
+| | | * commit e62f13e40aa69b1e9264cd0e7c27b00ba8976a53 (origin/FeatureCurrentFormula, FeatureCurrentFormula)
+| | |/  Author: jgalli <joelgalli@gmx.ch>
+| | |   Date:   Fri Nov 22 00:04:42 2019 +0100
+| | |   
+| | |       Implement method to calculate current formula
+| | |   
+| | *   commit 04ddae92ea3e7dca210368fb943df897807cc9ee
+| | |\  Merge: c42157b 70a0f34
+| | | | Author: jgalli <joelgalli@gmx.ch>
+| | | | Date:   Thu Nov 21 23:43:28 2019 +0100
+| | | | 
+| | | |     Merge remote-tracking branch 'origin/LogCalculations' into develop
+| | | | 
+| | | * commit 70a0f34a6baf34b127084604f1287f6d6f52c3c0 (origin/LogCalculations, LogCalculations)
+| | |/  Author: jgalli <joelgalli@gmx.ch>
+| | |   Date:   Thu Nov 21 23:42:19 2019 +0100
+| | |   
+| | |       Implement logs to clearify calculations
+| | |     
+| | | *   commit faba6000039413c897b6ef6cfc87ce56c3706f50 (refs/stash)
+| | | |\  Merge: c5d36fa 29056e4
+| |_|/ /  Author: jgalli <joelgalli@gmx.ch>
+|/| | |   Date:   Fri Nov 22 03:08:22 2019 +0100
+| | | |   
+| | | |       WIP on master: c5d36fa Initial commit
+| | | | 
+| | | * commit 29056e4dc301dc39a7c5bf4dd1fd3cee5a128971
+| |_|/  Author: jgalli <joelgalli@gmx.ch>
+|/| |   Date:   Fri Nov 22 03:08:22 2019 +0100
+| | |   
+| | |       index on master: c5d36fa Initial commit
+| | |   
+| | | * commit 81ba0fdb4d9e4c30ed91f9de5a4fdf452a341a9d (origin/FeatureResistanceFormula)
+| | | | Author: Cyril <cyrildambach@gmail.com>
+| | | | Date:   Fri Nov 22 00:05:20 2019 +0100
+| | | | 
+| | | |     The Feature Resistance has to be integrated.
+| | | | 
+| | | * commit 0e3600f865a2358d3a74ffa5723f4d78320efd8a
+| | |/  Author: Cyril <cyrildambach@gmail.com>
+| |/|   Date:   Thu Nov 21 23:58:34 2019 +0100
+| | |   
+| | |       The Feature Resistance has to be integrated.
+| | |   
+| * |   commit 310f2570e6823a6fb3bb58a7e0e5baf3df820204
+| |\ \  Merge: c42157b 1723fc9
+| | |/  Author: Cyril <cyrildambach@gmail.com>
+| |/|   Date:   Thu Nov 21 23:51:04 2019 +0100
+| | |   
+| | |       Commit after fixing merge conflicts.
+| | | 
+| | * commit 1723fc957913099e0f532e90513685f0a8f2adc5
+| | | Author: Cyril <cyrildambach@gmail.com>
+| | | Date:   Thu Nov 21 23:35:21 2019 +0100
+| | | 
+| | |     The Feature Tension has to be integrated.
+| | |   
+| * |   commit c42157bb00e06fb05b1e0d7e6327802af84eaa73
+| |\ \  Merge: 48a4944 ed20ff1
+| | |/  Author: jgalli <joelgalli@gmx.ch>
+| |/|   Date:   Thu Nov 21 23:30:12 2019 +0100
+| | |   
+| | |       Merge remote-tracking branch 'origin/origin/ReturnErrorIfMoreThanTwoInputs' into develop
+| | | 
+| | * commit ed20ff12e4a5c82e8791db9997b7f0bd62e82213 (origin/origin/ReturnErrorIfMoreThanTwoInputs, origin/ReturnErrorIfMoreThanTwoInputs)
+| |/  Author: jgalli <joelgalli@gmx.ch>
+| |   Date:   Thu Nov 21 23:28:53 2019 +0100
+| |   
+| |       Implement counter to prevent to many inputs
+| |   
+| *   commit 48a494430dddfdabdce1dbc149c61b1d401e9e2a
+| |\  Merge: 0c13506 5502631
+| | | Author: jgalli <joelgalli@gmx.ch>
+| | | Date:   Thu Nov 21 22:33:02 2019 +0100
+| | | 
+| | |     Merge remote-tracking branch 'origin/FeaturePowerFormula' into develop
+| | | 
+| | * commit 550263136c8a82ace3f47996e36758c48a121b67 (origin/FeaturePowerFormula, FeaturePowerFormula)
+| |/  Author: jgalli <joelgalli@gmx.ch>
+| |   Date:   Thu Nov 21 22:29:09 2019 +0100
+| |   
+| |       Implement method to calculate power formula
+| |   
+| *   commit 0c13506881b4b6f26f7f7840738f86218cf8e403
+| |\  Merge: c5d36fa db50ab2
+|/ /  Author: jgalli <joelgalli@gmx.ch>
+| |   Date:   Thu Nov 21 22:11:58 2019 +0100
+| |   
+| |       Merge branch 'IntegrateBaseProject' into develop
+| | 
+| * commit db50ab255a64ba6bd41dd0405677dd5c4a51cd68 (origin/IntegrateBaseProject, IntegrateBaseProject)
+|/  Author: jgalli <joelgalli@gmx.ch>
+|   Date:   Thu Nov 21 22:11:01 2019 +0100
+|   
+|       Version of base project files shall be up to date
+| 
+* commit c5d36fae035ab0c23cfc5a77d2cd26c9e0ec6777
+  Author: leisertimo <55849876+leisertimo@users.noreply.github.com>
+  Date:   Thu Nov 21 12:02:03 2019 +0100
+  
+      Initial commit

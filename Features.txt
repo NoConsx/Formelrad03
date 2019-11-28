@@ -1,0 +1,5 @@
+Neben den gelisteten Features, haben wid noch weitere Features hinzugefügt.
+
+- Clearbutton
+
+- Nur Zahlen & einen . können in die Textfelder im JavaFX eingetragen werden.
